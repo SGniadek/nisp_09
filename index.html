@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="main.css">
 
     <script src="timer.js" defer></script>
+    <script src="form.js" defer></script>
+    <script src="blok3.js" defer></script>
 </head>
 
 <body>
@@ -77,24 +79,35 @@
     </section>
 
     <!-- 🔥 BLOK 6: FAQ -->
-    <section id="faq">
-        <h2>FAQ</h2>
-        <div id="faq-list">
-            <!-- Akordeon FAQ w JS -->
-        </div>
-    </section>
+    <section class="dopamine-form-section">
+  <div class="dopamine-form-wrapper">
+    <h2 class="dopamine-title">Napisz do nas</h2>
 
-    <!-- 🔥 BLOK 7: Kontakt -->
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Imię" required><br><br>
-            <input type="email" placeholder="Email" required><br><br>
-            <textarea placeholder="Wiadomość" required></textarea><br><br>
-            <button type="submit" class="btn">Wyślij</button>
-        </form>
-    </section>
+    <form class="dopamine-form">
+      <div class="input-group">
+        <input type="text" required>
+        <label>Imię</label>
+        <span class="focus-border"></span>
+      </div>
 
+      <div class="input-group">
+        <input type="email" required>
+        <label>Email</label>
+        <span class="focus-border"></span>
+      </div>
+
+      <div class="input-group textarea">
+        <textarea required></textarea>
+        <label>Treść wiadomości</label>
+        <span class="focus-border"></span>
+      </div>
+
+      <button type="submit" class="dopamine-btn">
+        Wyślij wiadomość
+      </button>
+    </form>
+  </div>
+</section>
 
 <script src="blok3.js"></script>
 <section id="faq" class="absurd-faq">
@@ -152,5 +165,5 @@
         }
     </style>
 </section>
-</body>
+ </body>
 </html>
