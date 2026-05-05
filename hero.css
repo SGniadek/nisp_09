@@ -1,110 +1,113 @@
-/* === HERO BANER === */
-
-.hero-banner {
+.mega-hero {
   position: relative;
-  padding: 120px 20px;
-  text-align: center;
-  border-radius: 32px;
+  height: 90vh;
+  min-height: 520px;
   overflow: hidden;
-  background: radial-gradient(circle at top, #1b2550 0%, #050b24 70%);
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
-  margin-bottom: 40px;
-  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  user-select: none;
 }
 
-/* dekoracyjne bloby */
-.hero-bg-blob {
+/* === TŁO WIDEO === */
+.hero-video {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(50px);
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  animation: heroFloat 18s ease-in-out infinite alternate;
-  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.4) brightness(0.55) hue-rotate(-10deg);
+  z-index: 1;
 }
 
-.hero-bg-blob--orange {
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, #ff7a1a, transparent 70%);
-  top: -120px;
-  right: -80px;
-  animation-delay: -4s;
-}
-
-.hero-bg-blob--blue {
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, #1b7dff, transparent 70%);
-  bottom: -160px;
-  left: -100px;
-  animation-delay: -9s;
-}
-
-@keyframes heroFloat {
-  0% { transform: translate3d(0,0,0) scale(1); }
-  100% { transform: translate3d(40px,-30px,0) scale(1.1); }
-}
-
-.hero-banner-inner {
-  position: relative;
+/* delikatny granatowy overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(10,20,60,0.4), rgba(0,0,20,0.85));
   z-index: 2;
 }
 
-.hero-title {
-  font-size: clamp(42px, 6vw, 64px);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  margin-bottom: 12px;
-  background: linear-gradient(120deg, #ffdf7a, #ff7a1a);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 40px rgba(255,122,26,0.4);
+/* === PARALLAX === */
+.hero-parallax {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transform-style: preserve-3d;
 }
 
+/* === NEONOWY NAPIS === */
+.neon-text {
+  font-size: clamp(48px, 8vw, 110px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffb37a;
+  text-shadow:
+    0 0 12px rgba(255,122,26,0.9),
+    0 0 28px rgba(255,122,26,0.7),
+    0 0 60px rgba(255,122,26,0.5);
+  animation: neonPulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* neon pulsuje */
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 12px rgba(255,122,26,1),
+      0 0 28px rgba(255,122,26,0.9),
+      0 0 60px rgba(255,122,26,0.7);
+  }
+  50% {
+    text-shadow:
+      0 0 6px rgba(255,122,26,0.6),
+      0 0 14px rgba(255,122,26,0.4),
+      0 0 30px rgba(255,122,26,0.3);
+  }
+}
+
+/* === GLITCHUJĄCE LITERKI (neon gasnący) === */
+.neon-text span {
+  display: inline-block;
+  animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+  0%, 97%, 100% { opacity: 1; }
+  20% { opacity: 0.85; }
+  40% { opacity: 0.4; }
+  41% { opacity: 1; }
+  70% { opacity: 0.2; }
+  71% { opacity: 1; }
+}
+
+/* === PODTYTUŁ === */
 .hero-subtitle2 {
-  font-size: 18px;
-  color: #a7b0d9;
-  margin-bottom: 28px;
+  font-size: 20px;
+  margin-top: 12px;
+  color: #d0d6ff;
+  text-shadow: 0 0 12px rgba(255,255,255,0.25);
 }
 
-/* przycisk */
+/* === PRZYCISK === */
 .hero-btn {
   display: inline-block;
-  padding: 14px 32px;
+  margin-top: 28px;
+  padding: 16px 40px;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #1b1307;
   background: linear-gradient(135deg, #ff7a1a, #ffb37a);
-  box-shadow: 0 0 20px rgba(255,122,26,0.6);
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  color: #1b1307;
   text-decoration: none;
-}
-
-.hero-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(255,255,255,0.5), transparent 60%);
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.6s ease-out, opacity 0.3s ease-out;
+  box-shadow: 0 0 20px rgba(255,122,26,0.7);
+  transition: transform .2s, box-shadow .2s;
 }
 
 .hero-btn:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 30px rgba(255,122,26,0.9);
-}
-
-.hero-btn:hover::before {
-  transform: translateX(100%);
-  opacity: 1;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255,122,26,1);
 }

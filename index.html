@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="location.css">
     <script src="form.js" defer></script>
     <script src="blok3.js" defer></script>
+    <script src="parallax.js" defer></script>
 </head>
 
 <body>
@@ -29,17 +30,25 @@
     </nav>
 
     <!-- 🔥 BLOK 2: Hero -->
-    <section class="hero-banner">
-    <div class="hero-bg-blob hero-bg-blob--orange"></div>
-    <div class="hero-bg-blob hero-bg-blob--blue"></div>
+    <section class="mega-hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="./filmy/promo.mp4" type="video/mp4">
+  </video>
 
-    <div class="hero-banner-inner">
-        <h1 class="hero-title">Juwenalia 2026</h1>
-        <p class="hero-subtitle2">Największe święto studentów już 24–26 maja!</p>
+  <div class="hero-overlay"></div>
 
-        <a href="#lineup" class="hero-btn">Zobacz line-up</a>
+  <div class="hero-parallax" id="parallax">
+    <div class="hero-title neon-text" id="neonTitle">
+      Juwenalia 2026
     </div>
-    </section>
+
+    <p class="hero-subtitle2">
+      Największe święto studentów już 24–26 maja!
+    </p>
+
+    <a href="#lineup" class="hero-btn">Zobacz line-up</a>
+  </div>
+</section>
 
     <section class="countdown-section">
     <div class="countdown-wrapper">
