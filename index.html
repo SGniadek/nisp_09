@@ -6,7 +6,8 @@
     <title>Juwenalia 2026 – Twoja Uczelnia</title>
 
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="menu.css">     
+
+    <script src="timer.js" defer></script>
 </head>
 
 <body>
@@ -27,11 +28,35 @@
         <a href="#lineup" class="btn">Zobacz line-up</a>
     </section>
 
+    <section class="countdown-section">
+    <div class="countdown-wrapper">
+        <h2 class="countdown-title">Juwenalia startują za</h2>
+        <div class="countdown" id="countdown">
+        <div class="time-box">
+            <span class="time" id="days">00</span>
+            <span class="label">dni</span>
+        </div>
+        <div class="time-box">
+            <span class="time" id="hours">00</span>
+            <span class="label">godzin</span>
+        </div>
+        <div class="time-box">
+            <span class="time" id="minutes">00</span>
+            <span class="label">minut</span>
+        </div>
+        <div class="time-box">
+            <span class="time" id="seconds">00</span>
+            <span class="label">sekund</span>
+        </div>
+        </div>
+        <p class="countdown-subtitle">23 maja 2026 • Kampus Akademii Tarnowskiej</p>
+    </div>
+    </section>
+
     <!-- 🔥 BLOK 3: Line-up -->
     <section id="lineup">
-        <h2>Line-up</h2>
-        <div id="artists-container">
-            <!-- JS wygeneruje karty artystów -->
+        <h2>Line-up - 23 Maja</h2>
+        <div id="artists-container" class="artists-grid">
         </div>
     </section>
 
@@ -70,5 +95,7 @@
         </form>
     </section>
 
+
+<script src="blok3.js"></script>
 </body>
 </html>
