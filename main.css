@@ -54,3 +54,72 @@
             margin-top: 20px;
             display: inline-block;
         }
+
+        /* --- Style dedykowane dla BLOKU 3: Line-up --- */
+#lineup {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #111; /* Ciemne, koncertowe tło */
+    color: #fff;
+}
+
+#lineup h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.artists-grid {
+    display: grid;
+    /* Automatyczna siatka - od 280px wzwyż, wypełnia dostępną przestrzeń */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artist-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(255, 69, 0, 0.5); /* Energetyczny pomarańczowy blask */
+}
+
+.artist-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.artist-time {
+    color: #ff4500;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.artist-name {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.artist-genre {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
