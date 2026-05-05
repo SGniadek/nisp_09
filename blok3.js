@@ -6,21 +6,21 @@ const artistsLineup = [
         name: "Baciary",
         time: "17:00",
         genre: "Disco Polo",
-        image: "https://via.placeholder.com/400x250/333333/ffffff?text=Zespol+1", 
+        image: "./zdjecia/baciary.jpg", 
         alt: "Zdjęcie Zespołu 1"
     },
     {
         name: "Grubson",
         time: "20:00",
         genre: "Hip-Hop",
-        image: "https://via.placeholder.com/400x250/333333/ffffff?text=Zespol+2",
+        image: "./zdjecia/grubson.jpg",
         alt: "Zdjęcie Zespołu 2"
     },
     {
-        name: "Jakas Baba",
+        name: "Zalia",
         time: "22:00",
         genre: "Muzyka Elektroniczna / Pop",
-        image: "https://via.placeholder.com/400x250/333333/ffffff?text=Gwiazda+Wieczoru",
+        image: "./zdjecia/zalia.jpg",
         alt: "Zdjęcie Gwiazdy Wieczoru"
     }
 ];
