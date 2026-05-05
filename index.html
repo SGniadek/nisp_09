@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="main.css">
 
     <script src="timer.js" defer></script>
+
+    <!-- Leaflet CSS (wymagane do mapy) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Twój CSS dla lokalizacji -->
+    <link rel="stylesheet" href="location.css">
 </head>
 
 <body>
@@ -71,7 +76,7 @@
     <!-- 🔥 BLOK 5: Lokalizacja -->
     <section id="location">
         <h2>Lokalizacja</h2>
-        <div id="map" style="height: 300px; background: #333;">
+        <div id="map" style="height: 300px;">
             <!-- Mapa (embed lub JS) -->
         </div>
     </section>
@@ -95,7 +100,10 @@
         </form>
     </section>
 
-
+<!-- Leaflet JS (wymagane do mapy) -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Twój JS dla lokalizacji -->
+<script src="location.js"></script>
 <script src="blok3.js"></script>
 </body>
 </html>
