@@ -1,0 +1,110 @@
+/* === HERO BANER === */
+
+.hero-banner {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  border-radius: 32px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1b2550 0%, #050b24 70%);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  margin-bottom: 40px;
+  isolation: isolate;
+}
+
+/* dekoracyjne bloby */
+.hero-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation: heroFloat 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero-bg-blob--orange {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, #ff7a1a, transparent 70%);
+  top: -120px;
+  right: -80px;
+  animation-delay: -4s;
+}
+
+.hero-bg-blob--blue {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #1b7dff, transparent 70%);
+  bottom: -160px;
+  left: -100px;
+  animation-delay: -9s;
+}
+
+@keyframes heroFloat {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  100% { transform: translate3d(40px,-30px,0) scale(1.1); }
+}
+
+.hero-banner-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: clamp(42px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  background: linear-gradient(120deg, #ffdf7a, #ff7a1a);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(255,122,26,0.4);
+}
+
+.hero-subtitle2 {
+  font-size: 18px;
+  color: #a7b0d9;
+  margin-bottom: 28px;
+}
+
+/* przycisk */
+.hero-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1b1307;
+  background: linear-gradient(135deg, #ff7a1a, #ffb37a);
+  box-shadow: 0 0 20px rgba(255,122,26,0.6);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  text-decoration: none;
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.5), transparent 60%);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.3s ease-out;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 30px rgba(255,122,26,0.9);
+}
+
+.hero-btn:hover::before {
+  transform: translateX(100%);
+  opacity: 1;
+}
