@@ -1,6 +1,7 @@
    @import url("menu.css");
    @import url("timer.css");
    @import url("form.css");
+   @import url("harmonogram.css");
    body {
             margin: 0;
             font-family: Arial, sans-serif;
