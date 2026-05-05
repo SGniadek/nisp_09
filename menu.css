@@ -1,0 +1,85 @@
+
+.crazy-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #0a0a0a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+
+.nav-link {
+    position: relative;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    animation: rainbow-neon 2s linear infinite;
+    z-index: 1;
+}
+
+
+.nav-link:hover {
+    transform: scale(1.2) translateY(-5px);
+    letter-spacing: 3px;
+
+    animation: rainbow-neon 0.5s linear infinite; 
+}
+
+.nav-link::before,
+.nav-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.nav-link:hover::before {
+    animation: fireworks 0.8s ease-out infinite;
+}
+
+.nav-link:hover::after {
+
+    animation: fireworks 0.8s ease-out 0.3s infinite;
+}
+
+
+    0%   { color: #ff0000; text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000; }
+    20%  { color: #ffff00; text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 40px #ffff00; }
+    40%  { color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00; }
+    60%  { color: #00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff; }
+    80%  { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+    100% { color: #ff0000; text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000; }
+}
+
+
+@keyframes fireworks {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+        box-shadow: 
+            0 -30px 0 #ff0040,   30px -30px 0 #ffea00, 
+            30px 0 0 #00ff2a,    30px 30px 0 #00eaff, 
+            0 30px 0 #0040ff,    -30px 30px 0 #b300ff, 
+            -30px 0 0 #ff00b3,   -30px -30px 0 #ff0040;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+        box-shadow: 
+            0 -80px 0 transparent,   80px -80px 0 transparent, 
+            80px 0 0 transparent,    80px 80px 0 transparent, 
+            0 80px 0 transparent,    -80px 80px 0 transparent, 
+            -80px 0 0 transparent,   -80px -80px 0 transparent;
+    }
+}
